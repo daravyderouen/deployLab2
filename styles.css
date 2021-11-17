@@ -1,6 +1,19 @@
-#yes {
-    background-color: aquamarine;
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.yes {
+    color: aquamarine;
     border-radius: 20px;
     display: flex;
     justify-content: center;
+}
+
+#blanket1 {
+    border: 2px solid black;
+}
+
+#blanket2 {
+    border: 2px dotted pink;
 }
