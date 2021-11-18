@@ -89,7 +89,7 @@ nav {
     height: 100px;
     width: 100%;
     text-align: center;
-    border: 2px solid #f69c55;
+    
 }
 .span1 {
     display: table-cell;
@@ -97,7 +97,10 @@ nav {
 }
 
 .footerDiv {
-    display:inline-block;
+    font-size: 10vh;
+    display:flex;
+    justify-content: center;
+    align-content: center;
     overflow:hidden;
     white-space:nowrap;
   }
@@ -142,8 +145,3 @@ nav {
   }
   
   
-.footerP {
-    font-size:12px;
-    color:#999;
-    margin-top:200px;
-  }
