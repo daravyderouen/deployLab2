@@ -97,7 +97,8 @@ nav {
 }
 
 .footerDiv {
-   
+    color:rgb(252, 113, 182);
+    font-size: 10vh;
     display:flex;
     justify-content: center;
     align-content: center;
@@ -134,10 +135,10 @@ nav {
   }
   
   @keyframes slidein {
-      0% { margin-left:-800px; }
-      20% { margin-left:-800px; }
-      35% { margin-left:0px; }
-      100% { margin-left:0px; }
+      0% { margin-right:-800px; }
+      20% { margin-right:-800px; }
+      35% { margin-right:0px; }
+      100% { margin-right:0px; }
   }
   
   @keyframes reveal {
