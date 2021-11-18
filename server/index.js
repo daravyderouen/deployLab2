@@ -9,7 +9,7 @@ app.get("/", (req, res) => {
 
 }) 
 
-app.get('../public/styles.css', (req, res) => {
+app.get('/styles.css', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/styles.css'));
 })
 
@@ -19,7 +19,7 @@ app.get('/', (req,res) => {
 });
 
 app.get('/images/comfyblanket2.jpg', (req, res) => {
-    res.sendFile(path.join(__dirname, '/images/compfyblanket2.jpg'));
+    res.sendFile(path.join(__dirname, '../images/comfyBlanket2.jpg'));
 });
 
 app.get('/js', (req, res) => {
@@ -29,9 +29,9 @@ app.get('/js', (req, res) => {
 
   app.use('/js', express.static(path.join(__dirname, '../public/main.js')));
 
-  app.use('/server/index.js', express.static(path.join(__dirname, '/server/index.js')));
+  app.use('/server/index.js', express.static(path.join(__dirname, '../server/index.js')));
 
-  app.use('/images', express.static(path.join(__dirname, '/images')));
+  app.use('/images', express.static(path.join(__dirname, '../images')));
 
 
 
