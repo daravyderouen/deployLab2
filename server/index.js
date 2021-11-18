@@ -1,11 +1,10 @@
+//const PORT = process.env.PORT || 4005;
 const express = require("express");
-const { Server } = require("http");
-
-const PORT = process.env.PORT || 4005;
+//const { Server } = require("http");
 
 const path = require('path');
 
-const app = express()
+const app = express();
 
 // include and initialize the rollbar library with your access token
 var Rollbar = require("rollbar");
@@ -20,10 +19,10 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, '../public/store.html'));
 });
 
-app.get("/", (req, res) => {   
-    res.sendFile(path.join(__dirname, '../public/store.html'));
+//app.get("/", (req, res) => {   
+   // res.sendFile(path.join(__dirname, '../public/store.html'));
 
-});
+//});
 
 app.get('/style.css', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/style.css'));
@@ -43,13 +42,13 @@ app.get('/js', (req, res) => {
   })
 
 
-  app.use('/js', express.static(path.join(__dirname, '../public/main.js')));
+app.use('/js', express.static(path.join(__dirname, '../public/main.js')));
 
-  app.use('/server/index.js', express.static(path.join(__dirname, '../server/index.js')));
+app.use('/server/index.js', express.static(path.join(__dirname, '../server/index.js')));
 
-  app.use('/images', express.static(path.join(__dirname, '../images')));
+app.use('/images', express.static(path.join(__dirname, '../images')));
 
-  app.use(express.static(__dirname +'../public'));
+app.use(express.static(__dirname +'../public'));
 
 app.use(rollbar.errorHandler());
 
