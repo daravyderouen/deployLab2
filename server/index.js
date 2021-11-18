@@ -1,13 +1,13 @@
 //const PORT = process.env.PORT || 4005;
 const express = require("express");
 //const { Server } = require("http");
-
+const Rollbar = require("rollbar");
 const path = require('path');
 
 const app = express();
 
 // include and initialize the rollbar library with your access token
-var Rollbar = require("rollbar");
+
 var rollbar = new Rollbar({
   accessToken: '778553e0953c4940bb4304c48edeee1d',
   captureUncaught: true,
