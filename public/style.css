@@ -113,12 +113,15 @@ nav {
 .footerDiv:last-of-type {
     right: 50%;
     left: 50%;
-    width:0px;
-    animation: reveal 7s infinite;
+    width:10px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    animation: reveal 3s infinite;
   }
   
 .footerDiv:last-of-type span {
-    animation: slidein 7s infinite; 
+    animation: slidein 3s infinite; 
     display: flex;
     justify-content: center;
     align-content: center;
@@ -132,8 +135,8 @@ nav {
   }
   
   @keyframes slidein {
-      0% { margin-left:-80px; }
-      20% { margin-left:-80px; }
+      0% { margin-left:-800px; }
+      20% { margin-left:-800px; }
       35% { margin-left:0px; }
       100% { margin-left:0px; }
   }
