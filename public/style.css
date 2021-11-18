@@ -14,7 +14,7 @@ main > aside   { order: 3; width: 200px; }
     }
   }
 
-  body {
+  main {
     margin: 0;
     padding: 0;
     display: flex;
