@@ -18,6 +18,7 @@
 .container {
     flex-direction: row;
     left: 15%;
+    top: 90%;
     border: 5px dotted pink;
 }
 
