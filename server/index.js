@@ -33,7 +33,7 @@ app.get('/js', (req, res) => {
 
   app.use('/images', express.static(path.join(__dirname, '../images')));
 
-  app.use('/css', express.static(path.join(__dirname, '../public/css.css')));
+  app.use(express.static(__dirname +'../public'));
 
 
 
