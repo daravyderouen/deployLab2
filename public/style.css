@@ -1,5 +1,5 @@
 main { display: flex; }
-main > article { order: 2; min-width: 12em; flex:1; }
+main > article { order: 2; min-width: 10vh; flex:1; }
 main > nav     { order: 1; width: 200px; }
 main > aside   { order: 3; width: 200px; }
 
@@ -24,24 +24,10 @@ main > aside   { order: 3; width: 200px; }
 .yes {
     background-color: aquamarine;
     border-radius: 20px;
-    display: flex;
-    justify-content: center;
+   
 }
 
-#blanket1 {
-    border: 2px solid black;
-}
 
-#blanket2 {
-    border: 2px dotted pink;
-}
-
-.container {
-    flex-direction: row;
-    left: 15%;
-    top: 90%;
-    border: 5px dotted pink;
-}
 
 #firstP {
     font-family: cursive;
