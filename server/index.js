@@ -1,4 +1,5 @@
 const express = require("express");
+const { Server } = require("http");
 
 const path = require('path');
 
@@ -11,6 +12,11 @@ var rollbar = new Rollbar({
   captureUncaught: true,
   captureUnhandledRejections: true
 });
+
+app.get("/", (req, res) => {
+    rollbar.info('This Week Sucks!')
+    res.sendFile(path.join(__dirname, '../public/store.html'));
+})
 
 app.get("/", (req, res) => {   
     res.sendFile(path.join(__dirname, '../public/store.html'));
@@ -51,7 +57,7 @@ app.get('/js', (req, res) => {
 
 
 
-
+  server.use(rollbar.errorHandler());
 
 const port = process.env.PORT || 4005 
 app.listen(port, () => {  
