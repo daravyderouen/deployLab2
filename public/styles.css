@@ -4,7 +4,7 @@ body {
 }
 
 .yes {
-    color: aquamarine;
+    background-color: aquamarine;
     border-radius: 20px;
     display: flex;
     justify-content: center;
@@ -16,4 +16,9 @@ body {
 
 #blanket2 {
     border: 2px dotted pink;
+}
+
+.firstP {
+    font-family: cursive;
+    color: pink;
 }
