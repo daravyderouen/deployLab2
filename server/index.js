@@ -4,6 +4,14 @@ const path = require('path');
 
 const app = express()
 
+// include and initialize the rollbar library with your access token
+var Rollbar = require("rollbar");
+var rollbar = new Rollbar({
+  accessToken: 'afadba2f6bbc416b9ad9ab37c53b5af1',
+  captureUncaught: true,
+  captureUnhandledRejections: true
+});
+
 app.get("/", (req, res) => {   
     res.sendFile(path.join(__dirname, '../public/store.html'));
 
