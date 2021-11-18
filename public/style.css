@@ -49,10 +49,12 @@ main > aside   { order: 3; width: 200px; }
 
 article {
     border: 2px solid pink;
+    justify-content: center;
 }
 nav {
     border: 2px solid pink;
-    right: 90%;
+    right: 99%;
+    color: aqua;
 }
   nav > ul > li {
     display: flex;
