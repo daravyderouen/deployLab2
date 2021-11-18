@@ -51,6 +51,10 @@ article {
     border: 2px solid pink;
     justify-content: center;
 }
+
+aside {
+    justify-content: center;
+}
 nav {
     justify-content: left;
     border: 2px solid pink;
