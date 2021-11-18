@@ -1,18 +1,19 @@
 //const PORT = process.env.PORT || 4005;
 const express = require("express");
 //const { Server } = require("http");
-const Rollbar = require("rollbar");
+var Rollbar = require("rollbar");
 const path = require('path');
 
 const app = express();
 
 // include and initialize the rollbar library with your access token
 
+
 var rollbar = new Rollbar({
-  accessToken: '446aa9fb05bb47aca32344523c42aa5b',
+  accessToken: '6de733e5af174a459b2227c26a5497a1',
   captureUncaught: true,
-  captureUnhandledRejections: true
-});
+  captureUnhandledRejections: true,
+})
 
 app.get("/", (req, res) => {
     rollbar.info('This Week Sucks!')
