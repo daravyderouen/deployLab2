@@ -15,7 +15,16 @@
     border: 2px dotted pink;
 }
 
-.firstP {
+.container {
+    flex-direction: row;
+    left: 15%;
+    border: 5px dotted pink;
+}
+
+#firstP {
     font-family: cursive;
     color: pink;
+    justify-content: center;
+    align-content: center;
 }
+

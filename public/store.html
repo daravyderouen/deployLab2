@@ -7,6 +7,7 @@
   <title>Daravy Test</title>
   <link href="style.css" rel="stylesheet">
 </head>
+<header></header>
 <body>
 
 
@@ -14,14 +15,32 @@
     <h1 style="color:teal;">The comfiest blanket!</h1>
     <h2>Want more content?</h2>
       <button class="yes" type="submit">Yes!</button>
-      <img id="blanket1" src="/images/comfyBlanket1.jpg" alt="Tan Comfy Blanket" /> <img src="/images/comfyBlanket2.jpg" alt="Selections of Comfy Blankets" />
-  
 
-  <div>
-    <p class="firstP">These blankets are among the softest in the world. It is made from the finest sheep, NON GMO fed, no die. It will keep you warm and fuzzy throughout you cold heartless nights or your chilling winter loneliness. Our customer service can get your orders processed and shipped within hours. Get yours today!</p>
+  <style>
+        .zoom {
+          padding: 50px;
+          background-color: green;
+          transition: transform .2s; /* Animation */
+          width: 200px;
+          height: 200px;
+          margin: 0 auto;
+        }
+        
+        .zoom:hover {
+          transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+        }
+  </style>
+        
+  <div class="zoom">
+      <img id="blanket1" src="/images/comfyBlanket1.jpg" alt="Tan Comfy Blanket" / width="500"> <img src="/images/comfyBlanket2.jpg" alt="Selections of Comfy Blankets" width="500"/>
+  </div>
+
+  <div class="container">
+    <p id="firstP">These blankets are among the softest in the world. It is made from the finest sheep, NON GMO fed, no die. It will keep you warm and fuzzy throughout you cold heartless nights or your chilling winter loneliness. </p>
     <br>
-    <ul>
-      <li></li>
+    <ul> Perks of Owning One:
+      <li>Cozy</li>
+      <li>Easy to maintain</li>
     </ul>
   </div>
 
