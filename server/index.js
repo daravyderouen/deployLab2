@@ -1,6 +1,6 @@
 const express = require("express");
 const { Server } = require("http");
-const server = express(); //added that
+
 const PORT = process.env.PORT || 4005;
 
 const path = require('path');
@@ -10,7 +10,7 @@ const app = express()
 // include and initialize the rollbar library with your access token
 var Rollbar = require("rollbar");
 var rollbar = new Rollbar({
-  accessToken: 'afadba2f6bbc416b9ad9ab37c53b5af1',
+  accessToken: '778553e0953c4940bb4304c48edeee1d',
   captureUncaught: true,
   captureUnhandledRejections: true
 });
@@ -18,16 +18,16 @@ var rollbar = new Rollbar({
 app.get("/", (req, res) => {
     rollbar.info('This Week Sucks!')
     res.sendFile(path.join(__dirname, '../public/store.html'));
-})
+});
 
 app.get("/", (req, res) => {   
     res.sendFile(path.join(__dirname, '../public/store.html'));
 
-}) 
+});
 
 app.get('/style.css', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/style.css'));
-})
+});
 
 app.get('/', (req,res) => {
     res.sendFile(path.join(__dirname, '../server/index.js'));
@@ -51,6 +51,7 @@ app.get('/js', (req, res) => {
 
   app.use(express.static(__dirname +'../public'));
 
+app.use(rollbar.errorHandler());
 
 
 
@@ -59,9 +60,9 @@ app.get('/js', (req, res) => {
 
 
 
-server.use(rollbar.errorHandler());
+
 
 const port = process.env.PORT || 4005 
-server.listen(port, () => {  
+app.listen(port, () => {  
     console.log(`My app is on fiya on port ${port}`)
 })//changed app.listen to server.listen
