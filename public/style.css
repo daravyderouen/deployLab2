@@ -48,7 +48,7 @@ main > aside   { order: 3; width: 350px; }
   }
 
 article {
-    border: 2px solid pink;
+    border: 2px dotted pink;
     justify-content: center;
 }
 
