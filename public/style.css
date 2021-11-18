@@ -3,6 +3,8 @@ main > article { order: 2; min-width: 10vh; flex:1; }
 main > nav     { order: 1; width: 200px; }
 main > aside   { order: 3; width: 200px; }
 
+
+
 @media all and (max-width: 600px) {
     /* Too narrow to support three columns */
     main { flex-flow: column; }
@@ -12,8 +14,49 @@ main > aside   { order: 3; width: 200px; }
     }
   }
 
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+  }
+
+  header {
+    position: relative;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 2em;
+    letter-spacing: 4px;
+    overflow: hidden;
+    background: linear-gradient(90deg, #000, #fff, #000);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: animate 3s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  }
+  
+  @keyframes animate {
+    0% {
+      background-position: -500%;
+    }
+    100% {
+      background-position: 500%;
+    }
+  }
+
+article {
+    border: 2px dotted pink;
+}
+nav {
+    border: 2px dotted pink;
+}
   nav > ul > li {
     display: flex;
+    justify-content: left;
     flex-flow: column;
   }
   /* dynamically collapse submenus when not targetted */
