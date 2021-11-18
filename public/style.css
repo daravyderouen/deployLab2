@@ -84,3 +84,14 @@ nav {
     
 }
 
+.div1 {
+    display: table;
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    border: 2px dashed #f69c55;
+}
+.span1 {
+    display: table-cell;
+    vertical-align: middle;
+}
