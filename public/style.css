@@ -1,7 +1,7 @@
 main { display: flex; }
 main > article { order: 2; min-width: 10vh; flex:1; }
-main > nav     { order: 1; width: 200px; }
-main > aside   { order: 3; width: 200px; }
+main > nav     { order: 1; width: 150px; }
+main > aside   { order: 3; width: 250px; }
 
 
 
@@ -30,7 +30,7 @@ main > aside   { order: 3; width: 200px; }
     font-size: 10vh;
     letter-spacing: 4px;
     overflow: hidden;
-    background: linear-gradient(90deg, #000, #fff, #000);
+    background: linear-gradient(90deg, #000, #fff, rgb(252, 113, 182));
     background-repeat: no-repeat;
     background-size: 80%;
     animation: animate 3s linear infinite;
@@ -52,6 +52,7 @@ article {
     justify-content: center;
 }
 nav {
+    justify-content: left;
     border: 2px solid pink;
     right: 99%;
     color: aqua;
@@ -80,5 +81,6 @@ nav {
     color: pink;
     justify-content: center;
     align-content: center;
+    
 }
 
