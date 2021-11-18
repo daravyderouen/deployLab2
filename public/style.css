@@ -135,10 +135,10 @@ nav {
   }
   
   @keyframes slidein {
-      0% { margin-right:-800px; }
-      20% { margin-right:-800px; }
-      35% { margin-right:0px; }
-      100% { margin-right:0px; }
+      0% { margin-left:-100px; }
+      20% { margin-left:-100px; }
+      35% { margin-left:0px; }
+      100% { margin-left:0px; }
   }
   
   @keyframes reveal {
