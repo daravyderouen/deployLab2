@@ -110,8 +110,8 @@ nav {
     animation: showup 7s infinite;
   }
   
-.footerDiv:last-of-type {
-    right: 50%;
+.footerDiv2:last-of-type {
+
     width:500px;
     display: flex;
     justify-content: center;
@@ -119,7 +119,7 @@ nav {
     animation: reveal 3s infinite;
   }
   
-.footerDiv:last-of-type span {
+.footerDiv2:last-of-type span {
     animation: slidein 3s infinite; 
     display: flex;
     justify-content: center;
