@@ -48,16 +48,17 @@ main > aside   { order: 3; width: 200px; }
   }
 
 article {
-    border: 2px dotted pink;
+    border: 2px solid pink;
 }
 nav {
-    border: 2px dotted pink;
+    border: 2px solid pink;
     right: 90%;
 }
   nav > ul > li {
     display: flex;
     justify-content: left;
     flex-flow: column;
+    color: aquamarine;
   }
   /* dynamically collapse submenus when not targetted */
   nav > ul > li:not(:target):not(:hover) > ul {
