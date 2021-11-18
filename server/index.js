@@ -1,5 +1,7 @@
 const express = require("express");
 const { Server } = require("http");
+const server = express(); //added that
+const PORT = process.env.PORT || 4005;
 
 const path = require('path');
 
@@ -57,9 +59,9 @@ app.get('/js', (req, res) => {
 
 
 
-  server.use(rollbar.errorHandler());
+server.use(rollbar.errorHandler());
 
 const port = process.env.PORT || 4005 
-app.listen(port, () => {  
+server.listen(port, () => {  
     console.log(`My app is on fiya on port ${port}`)
-})
+})//changed app.listen to server.listen
