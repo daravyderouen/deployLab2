@@ -4,7 +4,7 @@ const express = require("express");
 
 const path = require('path');
 
-const app = express();
+const app = express()
 
 // include and initialize the rollbar library with your access token
 const server = express()
@@ -17,6 +17,8 @@ var rollbar = new Rollbar({
 
 // record a generic message and send it to Rollbar
 rollbar.log("Hello world!");
+let welcomeResponse = "Welcome to the API"
+let names = ['Katie', 'Edrea', 'Cam']
 
 // record a generic message and send it to Rollbar
 // rollbar.warning("warning message")
@@ -24,8 +26,7 @@ rollbar.log("Hello world!");
 // rollbar.log('Hello world!')
 // rollbar.debug("Cron job starting");
 
-let welcomeResponse = "Welcome to the API"
-let names = ['Katie', 'Edrea', 'Cam']
+
 
 app.get('/get', function(req, res) {
     rollbar.info('someone tapped the api')
