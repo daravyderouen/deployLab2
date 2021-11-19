@@ -32,10 +32,10 @@ app.get('/style.css', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/style.css'));
 });
 
-app.get('/', (req,res) => {
-    res.sendFile(path.join(__dirname, '../server/index.js'));
+//app.get('/', (req,res) => {
+    //res.sendFile(path.join(__dirname, '../server/index.js'));
 
-});
+//});
 
 app.get('/images/comfyblanket2.jpg', (req, res) => {
     res.sendFile(path.join(__dirname, '../images/comfyBlanket2.jpg'));
