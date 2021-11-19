@@ -24,7 +24,7 @@ rollbar.log("Hello world!");
 // rollbar.log('Hello world!')
 // rollbar.debug("Cron job starting");
 
-app.get('/', function(req, res) {
+app.get('/get', function(req, res) {
     rollbar.info('someone tapped the api')
     res.send(welcomeResponse)
 
