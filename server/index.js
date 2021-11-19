@@ -7,7 +7,7 @@ const path = require('path');
 const app = express();
 
 // include and initialize the rollbar library with your access token
-
+const server = express()
 var Rollbar = require("rollbar");
 var rollbar = new Rollbar({
   accessToken: '6de733e5af174a459b2227c26a5497a1',
@@ -18,10 +18,55 @@ var rollbar = new Rollbar({
 // record a generic message and send it to Rollbar
 rollbar.log("Hello world!");
 
-app.get("/", (req, res) => {
-    rollbar.info('This Week Sucks!')
-    res.sendFile(path.join(__dirname, '../public/store.html'));
-});
+// record a generic message and send it to Rollbar
+// rollbar.warning("warning message")
+// rollbar.critical("critical message")
+// rollbar.log('Hello world!')
+// rollbar.debug("Cron job starting");
+
+app.get('/get', function(req, res) {
+    rollbar.info('someone tapped the api')
+    res.send(welcomeResponse)
+
+    if (names.length > 1){
+        rollbar.warning("waning on checking names")
+    }
+    if (names.includes('Cam')){
+        rollbar.critical("Student is in array")
+    }
+    if (!names.includes('Jerrell')){
+        rollbar.debug("Student is NOT in array")
+    }    
+})
+
+app.put('/put', function(req, res) {
+    rollbar.info('someone tried to update')
+    res.send('update data')
+    .catch((err) => {
+        const Error = err
+        console.log('ERROR', err)
+        Rollbar.error(Error)
+    })
+
+})
+
+app.post('/post', function(req,res) {
+    res.send('Request')
+    if(!names.includes('Jerrell')){
+        rollbar.critical('POST: Student cannot post')
+    }
+})
+
+app.delete('/delete', function(req,res) {
+    res.send('Delete Request')
+    .catch((err) => {
+        Rollbar.error('DELETE: Student cannot be deleted')
+    })
+})
+
+
+
+//ROLLBAR SECTION END/////////////////////////////////
 
 //app.get("/", (req, res) => {   
    // res.sendFile(path.join(__dirname, '../public/store.html'));
@@ -66,6 +111,9 @@ app.use(rollbar.errorHandler());
 
 
 const port = process.env.PORT || 4005 
+
+server.use(rollbar.errorHandler());
+
 app.listen(port, () => {  
     console.log(`My app is on fiya on port ${port}`)
 })//changed app.listen to server.listen
