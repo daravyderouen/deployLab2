@@ -24,6 +24,9 @@ rollbar.log("Hello world!");
 // rollbar.log('Hello world!')
 // rollbar.debug("Cron job starting");
 
+let welcomeResponse = "Welcome to the API"
+let names = ['Katie', 'Edrea', 'Cam']
+
 app.get('/get', function(req, res) {
     rollbar.info('someone tapped the api')
     res.send(welcomeResponse)
