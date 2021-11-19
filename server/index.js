@@ -7,7 +7,7 @@ const path = require('path');
 const app = express()
 
 // include and initialize the rollbar library with your access token
-const server = express()
+//const server = express()
 var Rollbar = require("rollbar");
 var rollbar = new Rollbar({
   accessToken: '6de733e5af174a459b2227c26a5497a1',
@@ -31,31 +31,42 @@ app.get('/', function(req, res) {
 })
 
 app.get('/api/names', function(req,res) {
-    res.send('Request')
+    //moved res.send
     if(!names.includes('Jerrell')){
-        rollbar.warning('GET: Jerrell is not in array')
+        rollbar.warning('GET: Jerrell is not in array')  
     }
+    res.send('Request')
 })
 
 app.post('/api/names', function(req,res) {
-    res.send('Request')
+    //moved res.send to bottom
     if(!names.includes('Jerrell')){
         rollbar.critical('POST: Student cannot post')
     }
+    res.send('Request')
 })
 
 app.put('/api/names', function(req,res) {
-    res.send('Request')
+    // moved res.send to bottom
     if(!names.includes('Jerrell')){
         rollbar.critical('PUT: Student name cannot be updated')
     }
+    res.send('Request')
 })
 
 app.delete('/api/names/:index', function(req,res) {
-    res.send('Delete Request')
+    let name = req.body    //added line 58-65
+    rollbar.info('Someone made an attempt to delete a user')
+    res.send('Delete data')
+    db("NAMES")
+    .insert(name)
+    .then((ids) => {
+      res.status(201).json(ids);
+    })
     .catch((err) => {
         Rollbar.error('DELETE: Student cannot be deleted')
-    })
+    }) 
+    
 })
 
 
@@ -107,7 +118,7 @@ app.use(rollbar.errorHandler());
 
 const port = process.env.PORT || 4005 
 
-server.use(rollbar.errorHandler());
+//server.use(rollbar.errorHandler());
 
 app.listen(port, () => {  
     console.log(`My app is on fiya on port ${port}`)
