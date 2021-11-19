@@ -27,37 +27,24 @@ let names = ['Katie', 'Edrea', 'Cam']
 // rollbar.debug("Cron job starting");
 
 
-
-app.get('/get', function(req, res) {
-    rollbar.info('someone tapped the api')
-    res.send(welcomeResponse)
-
-    if (names.length > 1){
-        rollbar.warning("waning on checking names")
+app.get('/', function(req,res) {
+    res.send('Request')
+    if(!names.includes('Jerrell')){
+        rollbar.warning('GET: Jerrell is not in array')
     }
-    if (names.includes('Cam')){
-        rollbar.critical("Student is in array")
-    }
-    if (!names.includes('Jerrell')){
-        rollbar.debug("Student is NOT in array")
-    }    
-})
-
-app.put('/put', function(req, res) {
-    rollbar.info('someone tried to update')
-    res.send('update data')
-    .catch((err) => {
-        const Error = err
-        console.log('ERROR', err)
-        Rollbar.error(Error)
-    })
-
 })
 
 app.post('/post', function(req,res) {
     res.send('Request')
     if(!names.includes('Jerrell')){
         rollbar.critical('POST: Student cannot post')
+    }
+})
+
+app.put('/put', function(req,res) {
+    res.send('Request')
+    if(!names.includes('Jerrell')){
+        rollbar.critical('PUT: Student name cannot be updated')
     }
 })
 
@@ -68,6 +55,41 @@ app.delete('/delete', function(req,res) {
     })
 })
 
+app.put('/put', function(req,res) {
+    rollbar.info('Someone tried to update')
+    res.send('Update data')
+    .catch((err) => {
+        const Error = err
+        Rollbar.error(Error)
+    })
+})
+
+app.post('/post', function(req,res) {
+    let name = req.body
+    rollbar.info('Someone tried to post')
+    res.send('Post data')
+    MrJamesArray.push(name)
+    .catch((err) => {
+        const Error = err
+        Rollbar.error(Error)
+    })
+})
+
+app.delete('/delete', function(req,res) {
+    let name = req.body
+    rollbar.info('Someone made an attempt to delete a user')
+    res.send('Delete data')
+    db("NAMES")
+    .insert(name)
+    .then((ids) => {
+      res.status(201).json(ids);
+    })
+    .catch((err) => {
+        const Error = err
+        console.log('ERROR', Error)
+        rollbar.error(Error)
+    })
+})
 
 
 //ROLLBAR SECTION END/////////////////////////////////
